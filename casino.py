@@ -22,10 +22,6 @@ def main():
     #create the Casino
     casino_name = "Test Palace"
     casino = Casino(casino_name)
-    # intro to Casino
-    #casino.intro()
-    # create the dice for CRAPS
-    dice = Dice()
 
     # create the Dealer
     dealer = Dealer()
@@ -34,7 +30,7 @@ def main():
 
     # create the players at the table
     craps = Craps(dealer)
-    craps.roll()
+
     #craps.player_prompt()
     players = [Player(50,'Larry')]
     rolls = []
@@ -45,18 +41,27 @@ def main():
     number = int(input("What's the number to bet on?: "))
 
     bet = int(input("How much are you betting?: "))
-
-    point_win = False
-
+    come_bet = int(input("How much on the pass line?"))
+    come_bet *2
+    craps.roll()
+    point = craps.roll
+    print(craps.roll)
+    hard = craps.hard
+    dealer.collect_bet(players[0].bet(come_bet,2), craps.roll)
     print("Come out roll commence!")
+    i = 0
+    if craps.roll == 7:
+        i = 0
+        dealer.pay(players[0],come_bet)
+        print("7, winner!")
+    else:
+        craps.roll()
+        print(craps.roll)
     bet_win = craps.hard_way(bet)
     bet = players[0].bet(bet, number)
-    if bet[1] == craps.roll and craps.hard == True:
+    if players[0].number == craps.roll and craps.hard == True:
         Dealer.pay(players[0], bet_win)
     print(players[0].money)
-
-    #dealer.collect_bet()
-#    print(players[0].money, dealer.money)
 
 
 if __name__ == '__main__':
