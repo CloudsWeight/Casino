@@ -1,72 +1,120 @@
-'''Python Casino
-Description:  A fun casino game where you create
- a table of craps players with custom slogans.
-  Roll the dice, interact with players, spend money!
-  Play until you reach $0 or make it to the penthouse suite!
-
-Authors:  CSULB cohort 10 with some customizations by CkoudsWeight
-
-License:  Github the Unlicense
-'''
-import json
-from random import randint
 from Dice import Dice
-from Craps import Craps
-from Craps_roll import Call_roll as roll
 from Player import Player
-from Casino_class import Casino as Casino
-from Generate_player import Generate_player as create_player
+from Craps_roll import Call_roll
 from Dealer import Dealer
 
-def main():
-    #create the Casino
-    casino_name = "Test Palace"
-    casino = Casino(casino_name)
+class Craps:
+    ''' '''
+    def __init__(self, Dealer, players = {}):
+        self.token = True
+        self.players = players
+        self.dealer = Dealer
+        self.attr = {'dealer': Dealer, 'players':players}
 
-    # create the Dealer
-    dealer = Dealer()
-    dealer.name = 'Bob'
-    print(f"{dealer.name} will be working at {casino.name} tonight")
-
-    # create the players at the table
-    craps = Craps(dealer)
-
-    #craps.player_prompt()
-    players = [Player(50,'Larry')]
-    rolls = []
-    db = {}
-
-    print(f"{players[0].name} gets the dice first")
-
-    number = int(input("What's the number to bet on?: "))
-
-    bet = int(input("How much are you betting?: "))
-    come_bet = int(input("How much on the pass line?"))
-    come_bet *2
-    craps.roll()
-    point = craps.roll
-    print(craps.roll)
-    hard = craps.hard
-    dealer.collect_bet(players[0].bet(come_bet,2), craps.roll)
-    print("Come out roll commence!")
-    i = 0
-    while point == False or craps == False:
-        if craps.roll == 7 and i == 0:
-            dealer.pay(players[0],come_bet)
-            print("7, winner!")
-            craps.roll()
+    def roll(self):
+        dice = Dice()
+        dice.roll()
+        self.roll = dice.roll
+        self.d1 = dice.d1
+        self.d2 = dice.d2
+        if dice.hard == True:
+            self.hard = True
         else:
-            craps.roll()
-            print(craps.roll)
-            if craps.roll == point:
-                print("winner")
+            self.hard = False
+        self.hard
 
-    bet_win = craps.hard_way(bet)
-    bet = players[0].bet(bet, number)
-    if players[0].number == craps.roll and craps.hard == True:
-        Dealer.pay(players[0], bet_win)
-    print(players[0].money)
+    def hard_way(self, bet):
+        bet = int(bet)
+        return 30 * bet
+
+    def attr(self):
+        return {'total':dice.roll, 'hard':dice.hard, 'd1':dice.d1, 'd2':dice.d2}
+
+    def player_prompt(self):
+        players = []
+        n = int(input("How many players are at the table?"))
+        if n < 10:
+            if isinstance(n, int) == True:
+                i = 0
+                while i <n:
+                    player = Player()
+                    player.prompt()
+                    players.append(player)
+                    print(f"Greetings {player.name} time to lose all {player.money} of your money")
+                    i +=1
+            self.players = players
+
+        def turn(self, players):
+            players = players
+            win = True
+            lose = False
+            rolls = {}
+            i = 0
+            for player in players:
+                if player.token == True:
+                    ans = str(input("Betting WITH or AGAINST the point?: ")).upper()
+                    if ans == 'WITH':
+                        point = win
+                    else:
+                        point = lose
 
 
-if __name__ == '__main__':
+                    bet = Bet(self.hard_way())
+
+            def pass_line(self):
+                return 1
+
+
+            def roll_stats(results):
+                e = {}
+                c = Counter(results)
+                #most_common = c.most_common(1)
+                for i in c:
+                    e[i]=c[i]
+                return e
+
+            def move_dice(self, player_old, player_new):
+                player1 = player_old
+                player1.token = False
+                player2 = player_new
+                plater2.token = True
+                print(f"Moved dice from {player_old} to {player_new}.")
+
+    def table(self):
+        dealer = self.dealer
+        players = self.players
+        print(dealer.token)
+
+    def intro(self):
+        print("\n################################################\n"\
+        "WELCOME TO THE CRAPS TABLE !\n" \
+        "************************************************\n" \
+        "Let's play craps!  Make some players. \n" \
+        "Decide how they react! \n" \
+        "Have fun, make up RanD0m Sl0gans!\n" \
+        "  Yo! 11!  Yahtzee!  Snake Eyes!  Barnacles!  \n"
+        "################################################\n\n")
+        print("")
+        print("                         _______")
+        print("                 / / \\                \\")
+        print("               // ()  \\      ()        \\")
+        print("            //          \\    _______ \\")
+        print("            \\         //     ()         //")
+        print("              \\ ()  //         ()      //")
+        print("         ____ \\//   _____   ()   //")
+        print("     / \ \               \\")
+        print("   / ()  \ \     ()        \\")
+        print("/           \ \   _______ \\")
+        print("\\          //     ()         //")
+        print("  \\ ()  //         ()      //")
+        print("     \\//   _____   ()  //")
+        print(f"\nIT'S CRAPS TIME BABY!!!\LET'S ROLL!!")
+
+
+
+def main():
+    craps = Craps('Bill')
+    craps.roll()
+
+if __name__ == "__main__":
     main()
