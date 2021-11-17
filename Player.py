@@ -25,7 +25,7 @@ class Player():
     def bet(self, bet, number):
         self.money = self.money - bet
         self.number = number
-        return bet, self.number
+        return bet
 
     def tell_bet(self, bet):
         return str(bet)
