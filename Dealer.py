@@ -20,17 +20,22 @@ class Dealer:
     def __str__(self):
         return attr()
 
-    def collect_bet(self,bet, number):
-        self.money = self.money + bet
+    def collect_bet(self, number, amount):
+        self.money = self.money + amount
         self.number = number
-        return bet, number
+        return amount, number
+
+    def passline_win(self, bet):
+        bet = int(bet)
+        return bet * 2
 
     def hard_way(self, bet):
         bet = int(bet)
         return 30 * bet
 
     def pay(self, player, win):
-        self.money - int(win )
+        win = win
+        self.money - win
         player.money
         return win
 
