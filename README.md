@@ -1,8 +1,12 @@
 # Casino
  W I P 
- Will add comments soon.  
-CLases with methods to create a Craps game.
-Written from scratch. 
+Will add comments soon.  
+
+# Basic Principles
+Uses object-oriented principles to create multiple classes to mimic a casino craps game.  
+PLayer class creates player objects that maintains the balance of the players money as they play craps.
+Dealer class creates dealer obects that update player objects' state data.
+Craps class (W.I.P.) creates craps table objects that mimic the bets and odds allowed at a craps game.
 
 # Basic Usage
 Copy casino folder to computer, run the casino.py script to see basic example.
