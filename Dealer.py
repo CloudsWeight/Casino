@@ -25,6 +25,8 @@ class Dealer:
         self.number = number
         return amount, number
 
+    #def ask_bet(self):
+
     def passline_win(self, bet):
         bet = int(bet)
         return bet * 2
