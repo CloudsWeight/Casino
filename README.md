@@ -1,6 +1,5 @@
 # Casino
- W I P 
-Will add comments soon.  
+Originally a project to learn Object-oriented principles.  Slowly morphing into learning Agile processes and guidelines.  
 
 # Basic Principles
 Uses object-oriented principles to create multiple classes to mimic a casino craps game.  
