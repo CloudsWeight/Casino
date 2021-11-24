@@ -38,7 +38,7 @@ class Craps:
 
 def main():
     craps = Craps()
-    craps.select_random_players()
+    print(craps.list_players())
 
 if __name__ == "__main__":
     main()
