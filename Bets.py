@@ -103,7 +103,7 @@ class Bets:
 
 
 def main():
-    bet = Bet()
+    bet = Bets()
     #print(bet.attr)
 
 if __name__ == "__main__":
