@@ -2,23 +2,22 @@
 Dealer class
 
 '''
+from randos import names
+from random import randint
+
+names = names
+def random_dealer_name():
+    n = randint(0, (len(names)-1))
+    return names[n]
+
 class Dealer:
 
-    def __init__(self,money = 1000000, name = 'Dean',   token = True):
-        self.money = money
-        self.name = name
-        self.token = token
-
-    def attr(self):
-        return {'money':self.money,'name':self.name, 'token':self.token}
+    def __init__(self):
+        self.money = 1000000
+        self.name = random_dealer_name()
 
     def set_token(self, token):
         return token
-
-    def __repr__(self):
-        return self.attr()
-    def __str__(self):
-        return attr()
 
     def collect_bet(self, number, amount):
         self.money = self.money + amount
@@ -42,8 +41,8 @@ class Dealer:
         return win
 
 def main():
-    pass
-    #dealer = Dealer()
+    dealer = Dealer()
+    print(dealer.name)
 
 if __name__ == "__main__":
     main()
