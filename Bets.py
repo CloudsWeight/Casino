@@ -1,13 +1,15 @@
 '''Bet.py
 
 '''
-class Bet:
+class Bets:
 
     def __init__(self):
         self.win = 0
+        self.info = {"dealer":self.dealer, "player":self.player}
 
     def dealer(self, dealer):
         self.dealer = dealer
+
     def player(self, player):
         self.player = player
 
@@ -17,17 +19,33 @@ class Bet:
     def lose(self):
         return None
 
-    def pass_line_bet(self, player):
-        player = player
+    def pass_bet(self):
+        bet = int(input("How much are you betting?: "))
+        self.pass_line_bet = bet
+        self.money -self.pass_line_bet
+        return self.pass_line_bet
+
+    def ask_bet(self, bet =0):
+        if bet == 0:
+            bet = int(input("How much are you betting?: "))
+            self.bet = bet
+            self.money - self.bet
+        else:
+            self.bet = bet
+            self.money - self.bet
+        return self.bet
+
+    def bet_the_pass_line(self):
         a = input("Are you betting With" \
-                        "or Against the craps point? [W] or [A]: ")
+                        "or Against the player? [W] or [A]: ")
         if a.upper() == "W":
             a = True
         else:
             a = False
         player.pass_line = a
+
         print("Dealer:",self.dealer.money," Player",player.money)
-        bet = player.pass_bet()
+
         self.dealer.money = self.dealer.money + bet
         print(self.dealer.money)
         txt =self.open_roll()
