@@ -3,7 +3,7 @@ Originally a project to learn Object-oriented principles.  Slowly morphing into 
 
 # Basic Principles
 Uses object-oriented principles to create multiple classes to mimic a casino craps game.  
-*  Creates 10 random players with a random amount of money from $20-$1000.
+*  Combines classes with methods and procedural programming 
 
 # Basic Usage
 Copy casino folder to computer, run the casino.py script to see basic example.
