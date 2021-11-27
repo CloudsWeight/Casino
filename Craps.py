@@ -16,6 +16,11 @@ class Craps:
         self.point = False
         self.hard = None
 
+    def make_dealer(self):
+        dealer = make_random_dealer()
+        self.dealer = dealer
+        return self.dealer
+
     def ask_to_play(self):
         ans = input("Do you want to roll the dice? [Y]es or [N]o: ").upper()
         if ans == "Y":
@@ -49,14 +54,15 @@ class Craps:
         time.sleep(1)
 
     def bet_boxcars(self):
-        print("Betting on the box cars!")
+        print("Betting on hard 12!!")
         time.sleep(2)
         for i in self.players:
             big_bet = round((i.money / 5),0)
-            print(i.name, 'might bet', big_bet, "WATCH OUT!")
+            print(i.name, 'can bet up to:', big_bet)
             try:
                 bet_amnt = i.bet_sum(randint(5,big_bet))
-                print("TRUE BET:",i.name, "is betting", bet_amnt, "to win $", 30*bet_amnt)
+                print(f"{i.name}'s TRUE BET: ${bet_amnt} to win ${30*bet_amnt}!")
+                i.box_cars == True
                 if bet_amnt ==0:
                     bet_amnt = i.bet_sum(randint(5,big_bet))
                     print(i.name, "betting", bet_amnt)
@@ -64,8 +70,10 @@ class Craps:
                     i.box_cars = True
                 else:
                     i.box_cars = False
+
             except:
-                print("Not enough money")
+                print(f"{i.name} has only {i.money}")
+                self.bet = 0
                 i.box_cars = False
 
     def automate_players(self):
@@ -77,14 +85,14 @@ class Craps:
             if self.total == 12:
                 for i in self.players:
                     self.payout_boxcars(i)
-                self.automate_players()
+            self.automate_players()
             elif ans == False:
-                return
+                self.automate_players()
 
     def payout_boxcars(self,player):
         if self.total == 12:
             player.money = player.money   + self.dealer.pay(player.bet*30)
-            print(f"Won {player.bet *30}!")
+            print(f"{player.name} WON! ${player.bet *30}!  The new balance is ${player.money}.00")
         else:
             return "Roll again."
 
