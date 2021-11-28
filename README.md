@@ -10,6 +10,3 @@ Copy casino folder to computer, run the craps.py script to see basic example.  T
 
 The ultimate goal is to simlate a craps table and have the random players automatically place bets and roll the dice. 
 In the process of creating complex statistics from player rolls. 
-
-# Doc.txt
-Plaeholder for notes/plans for the project. 
