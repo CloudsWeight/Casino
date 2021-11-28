@@ -1,9 +1,5 @@
 # Casino
-Focused on OOP and Agile techniques to create casino games.  Current game design is a craps table with 10 players. 
-
-# Basic Principles
-Uses object-oriented principles to create multiple classes to mimic a casino craps game.  
-*  Combines classes with methods and procedural programming 
+Focused on OOP and Agile techniques to create casino games.  Current game design is a craps table with 10 players.
 
 # Basic Usage
 Copy casino folder to computer, run the craps.py script to see basic example.  The current automation is to have all players bet a random sum of money on hard 12.
