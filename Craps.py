@@ -85,7 +85,7 @@ class Craps:
             if self.total == 12:
                 for i in self.players:
                     self.payout_boxcars(i)
-            self.automate_players()
+                    self.automate_players()
             elif ans == False:
                 self.automate_players()
 
