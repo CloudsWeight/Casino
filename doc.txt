@@ -1,15 +1,9 @@
-TO DO / READ ME
-*  This is an informal text file for notes on what needs to be done or fixed
-* The general code should be written in a way that comments should not be needed
-
-CLASSES / METHODS TO FIX
+TO DO 
+______
+FIX CLASSES / METHODS 
 * pass_line bet:
   - needs to store players betting with  point or against
   -  then check the roll vs the point
-  -  then return the bet values to corresponding players depending
-
-PSEUDO CODE / ABSTRACTING CONCEPTS
-  * bets:
-  should loop after every time before a player rolls to make a point
-
+  -  then return the bet values to corresponding players depending\
+  
   *
