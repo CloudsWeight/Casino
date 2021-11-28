@@ -1,5 +1,5 @@
 # Casino
-Originally a project to learn Object-oriented principles.  Slowly morphing into learning Agile processes and guidelines.  
+Focused on OOP and Agile techniques to create casino games.  Current game design is a craps table with 10 players. 
 
 # Basic Principles
 Uses object-oriented principles to create multiple classes to mimic a casino craps game.  
