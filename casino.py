@@ -4,8 +4,7 @@ Description:  A fun casino game where you create
   Roll the dice, interact with players, spend money!
   Play until you reach $0 or make it to the penthouse suite!
 
-Authors:  CSULB cohort 10 with some customizations by CkoudsWeight
-
+Author: Clouds Weight
 License:  Github the Unlicense
 '''
 #import json
