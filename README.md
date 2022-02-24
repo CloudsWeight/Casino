@@ -1,5 +1,5 @@
 # Casino
-Focused on OOP and Agile techniques to create casino games woth functions from scratch.  Current game design is a craps table with 10 players.
+Focused on OOP and Agile techniques to create casino games with functions/classes from scratch.  Current game design is a craps table with 10 players.
 
 # Basic Usage
 Copy casino folder to computer, run the craps.py script to see basic example.  The current automation is to have all players bet a random sum of money on hard 12.
